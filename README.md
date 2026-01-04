@@ -65,3 +65,47 @@ Victor Teixeira
 QA / Analista de Testes
 Projeto desenvolvido para fins de estudo e portfólio
 
+## Projeto 2 – Testes E2E de Checkout
+
+### Objetivo
+Validar o fluxo completo de compra em um e-commerce, desde o login até a finalização do pedido.
+
+### Tecnologias
+- Cypress
+- JavaScript
+- Git / GitHub
+
+### Cenários Automatizados
+- Login com usuário válido
+- Adição de produto ao carrinho
+- Acesso ao checkout
+- Preenchimento de dados obrigatórios
+- Finalização da compra com sucesso
+
+### Como Executar
+```bash
+npx cypress open
+Selecionar E2E Testing, escolher o navegador e executar checkout.cy.js.
+
+Estrutura
+cypress
+ └── e2e
+     ├── login.cy.js
+     └── checkout.cy.js
+
+5. Pressione **Ctrl + S** (salvar)
+
+⚠️ Se você **não apertar Ctrl + S**, nada será salvo.
+
+---
+
+## 🧭 PASSO 2 — CONFERIR SE O GIT VIU A MUDANÇA
+
+No terminal do VS Code, execute:
+
+```bash
+git status
+
+Você deve ver algo como:
+modified: README.md
+
