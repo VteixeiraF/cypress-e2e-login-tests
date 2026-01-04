@@ -1,23 +1,21 @@
-describe('Login - Testes E2E', () => {
+import LoginPage from '../pages/LoginPage'
+
+describe('Login - Page Object Model', () => {
+
+  const loginPage = new LoginPage()
 
   beforeEach(() => {
-    cy.visit('https://the-internet.herokuapp.com/login')
-    cy.fixture('user').as('user')
+    loginPage.visitar()
   })
 
-  it('Deve realizar login com sucesso', function () {
-    cy.login(this.user.validUser.username, this.user.validUser.password)
-    cy.contains('You logged into a secure area!').should('be.visible')
+  it('Deve preencher email corretamente', () => {
+    loginPage.preencherEmail('teste@email.com')
+    loginPage.validarEmail('teste@email.com')
   })
 
-  it('Não deve logar com credenciais inválidas', function () {
-    cy.login(this.user.invalidUser.username, this.user.invalidUser.password)
-    cy.contains('Your username is invalid!').should('be.visible')
-  })
-
-  it('Não deve permitir login com campos vazios', () => {
-    cy.get('button[type="submit"]').click()
-    cy.contains('Your username is invalid!').should('be.visible')
+  it('Não deve aceitar email inválido', () => {
+    loginPage.preencherEmail('email-invalido')
+    loginPage.validarEmail('email-invalido')
   })
 
 })
